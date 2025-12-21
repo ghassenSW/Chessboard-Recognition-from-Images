@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Model weights and training outputs
+runs/
+*.pt
+*.pth
+*.h5
+*.weights
+*.onnx
+
+# Dataset (if large - adjust as needed)
+# Uncomment if you don't want to upload the dataset
+# chessboard project/train/
+# chessboard project/test/
+# chessboard project/valid/
+
+# Generated visualizations
+dataset_visualization.png
+*.png
+!images/*.png
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+temp/
+tmp/
+*.tmp
