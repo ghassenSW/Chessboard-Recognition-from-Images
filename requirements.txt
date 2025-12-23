@@ -1,0 +1,24 @@
+# Core dependencies
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+matplotlib>=3.7.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Dataset management
+roboflow>=1.1.0
+
+# TensorFlow (for YOLOv3 notebook)
+tensorflow>=2.13.0
+
+# Jupyter notebook support
+notebook>=7.0.0
+ipykernel>=6.25.0
+
+# Utilities
+pathlib2>=2.3.7
+tqdm>=4.65.0
