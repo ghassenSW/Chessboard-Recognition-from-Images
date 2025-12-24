@@ -204,7 +204,7 @@ if __name__ == "__main__":
     # test_model(r"C:\Users\ghass\OneDrive\Desktop\practice projects\chessboard to FEN\runs\chess\chess_detection\weights\best.pt")
     
     # Option 3: Run inference on a single image (uncomment to use)
-    predict_on_image(r"C:\Users\ghass\Downloads\php9v9aMF.jpeg")
+    predict_on_image(r"C:\Users\ghass\OneDrive\Desktop\practice projects\chessboard to FEN\chessboard project\test\images\d7887071e972604ddf5940d8eb2702e7_jpg.rf.9e1760bfa031e0f1b9ec48b6c0448994.jpg")
     
     print()
     print("All done! 🎉")
