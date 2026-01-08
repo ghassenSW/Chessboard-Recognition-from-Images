@@ -32,12 +32,6 @@ wheels/
 # VS Code
 .vscode/
 
-# Output files
-output/
-*.jpg
-*.png
-*.mp4
-*.avi
 
 # Keep example images
 !examples/*.jpg
