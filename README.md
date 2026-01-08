@@ -15,6 +15,15 @@ A Python-based chess piece detection and board mapping system using ONNX models 
 - **GPU Support**: Optional CUDA acceleration for faster inference
 - **Visualization**: Draw bounding boxes, grid lines, and square labels
 
+## 🚀 Live Demo
+
+**Try it right now without installing anything!**
+
+Access the deployed Streamlit web application here:
+👉 **[Chessboard Recognition App](https://chessboard-recognition-from-images.streamlit.app/)**
+
+Simply upload an image of a chessboard, and the app will generate the FEN string and a Lichess analysis link instantly.
+
 ## Detected Pieces
 
 - **White pieces**: pawn (p), knight (n), bishop (b), rook (r), queen (q), king (k)
