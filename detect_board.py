@@ -530,7 +530,7 @@ def main():
     
     # Paths
     xcorners_model_path = "models/480L_leyolo_xcorners.onnx"
-    input_image_path = "examples/chessboard.jpg"
+    input_image_path = "examples/test.jpg"
     
     # Initialize detector
     detector = ChessboardDetector(xcorners_model_path)

@@ -406,7 +406,7 @@ def main():
     
     # Hardcoded paths
     pieces_model_path = "models/480M_leyolo_pieces.onnx"
-    input_image_path = "examples/chessboard.jpg"
+    input_image_path = "examples/test.jpg"
     output_image_path = "output/detected_board.jpg"
     
     print("=" * 60)
