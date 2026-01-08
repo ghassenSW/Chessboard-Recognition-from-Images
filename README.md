@@ -7,6 +7,8 @@ A Python-based chess piece detection and board mapping system using ONNX models 
 - **Piece Detection**: Detect and classify all 12 chess pieces with confidence scores
 - **Corner Detection**: Find chessboard corner points for grid construction
 - **Board Mapping**: Automatically map detected pieces to chess notation (e.g., "a1", "e4")
+- **FEN Generation**: Converts detected position to standard FEN notation
+- **Lichess Integration**: Generates direct Lichess analysis links from detected positions
 - **Homography Transform**: Accurate piece-to-square mapping using perspective transformation
 - **High Accuracy**: Uses LeYOLO-based models optimized for chess
 - **Easy to Use**: Simple Python scripts with minimal setup
@@ -15,8 +17,10 @@ A Python-based chess piece detection and board mapping system using ONNX models 
 
 ## Detected Pieces
 
-- **White pieces**: Pawn (P), Knight (N), Bishop (B), Rook (R), Queen (Q), King (K)
-- **Black pieces**: pawn (p), knight (n), bishop (b), rook (r), queen (q), king (k)
+- **White pieces**: pawn (p), knight (n), bishop (b), rook (r), queen (q), king (k)
+- **Black pieces**: Pawn (P), Knight (N), Bishop (B), Rook (R), Queen (Q), King (K)
+
+*Note: FEN notation uses lowercase for white pieces and uppercase for black pieces.*
 
 ## Board Notation
 
@@ -81,19 +85,13 @@ This will:
 2. Detect all chess pieces with bounding boxes
 3. Detect chessboard corner points
 4. Map each piece to its board square (e.g., "a1", "e4")
-5. Save annotated visualization to `output/final_mapped_board.jpg`
-6. Display a table of pieces and their squares
+5. Generate FEN notation for the position
+6. Output Lichess analysis link
 
 **Sample Output:**
 ```
-Piece  Square
----------------
-P      a1
-N      b1
-B      c1
-Q      d1
-K      e1
-...
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1
+https://lichess.org/analysis/rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR_w_-_-_0_1
 ```
 
 ### Individual Detection Scripts
@@ -149,34 +147,34 @@ Chess Board Logic Fix - Corrected Coordinates
 Loading image: examples/chessboard.jpg
 Detecting pieces...
 -> Found 32 pieces.
-Detecting board corners...
--> Found 49 raw grid points.
-Mapping pieces to squares...
-----------------------------------------
-Piece  Square
----------------
-P      a2
-P      b2
-P      c2
-...
-K      e1
-
-Saved result to output/final_mapped_board.jpg
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1
+https://lichess.org/analysis/rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR_w_-_-_0_1
 ```
 
-### Visual Output
-The system creates an annotated image showing:
-- **Green boxes**: White pieces
-- **Red boxes**: Black pieces
-- **Yellow lines**: Board grid
-- **Purple dots**: Piece center points
-- **Square labels**: Chess notation for each piece
+The output includes:
+- **FEN String**: Standard chess position notation
+- **Lichess Link**: Direct link to analyze the position on Lichess.org
 
-## Project Structure
+### FEN Notation
 
+The system generates standard [Forsyth-Edwards Notation (FEN)](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation):
+- Describes piece positions on all 64 squares
+- Uses lowercase for white pieces (p, n, b, r, q, k)
+- Uses uppercase for black pieces (P, N, B, R, Q, K)
+- Numbers represent consecutive empty squares
+- Includes turn indicator and move counters
+
+### Lichess Integration
+
+Automatically generates a Lichess analysis URL:
 ```
-chess_piece_detector/
-├── main.py                        # Full board analysis
+https://lichess.org/analysis/[FEN]
+```
+Click the link to:
+- View the detected position on Lichess
+- Analyze with Stockfish engine
+- Explore variations and moves
+- Share the position with othersalysis
 ├── detect_pieces.py               # Piece detection only
 ├── detect_board.py                # Corner detection only
 ├── requirements.txt               # Dependencies
@@ -291,10 +289,11 @@ Models from CameraChessWeb - refer to their repository for model licensing.
 
 ## Future Ideas
 
-- FEN notation generation
-- Position validation
-- Video/webcam support
-- Move detection
+- Position validation (check for legal positions)
+- Video/webcam support for real-time detection
+- Move detection from video sequences
+- Multi-board detection
+- Custom board orientation support
 - **Original models**: Visit [CameraChessWeb](https://github.com/CSSLab/CameraChess)
 
 ---
